@@ -6,7 +6,7 @@ function ItemView(opts) {
 
 ItemView.prototype.render = function() {
   return '<' + this.element + '>' + 
-         '<span>' + this.model.text + '</span>' + 
-         '<input type="checkbox"' + (this.model.finished ? ' checked' : '') + ' />'
+           '<span>' + this.model.text + '</span>' + 
+           '<input type="checkbox"' + (this.model.finished ? ' checked' : '') + ' />' +
          '</' + this.element + '>';
 }
