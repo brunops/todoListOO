@@ -1,0 +1,3 @@
+function TodoListView() {
+  this.list = [];
+}
