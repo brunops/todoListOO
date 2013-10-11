@@ -2,7 +2,7 @@ describe('ItemView', function() {
   var item, itemView;
 
   beforeEach(function() {
-    item = new Item({ text: 'Take dog for walk' });
+    item = new Item({ text: 'Walk the dog' });
     itemView = new ItemView({ model: item });
   });
 
@@ -21,4 +21,10 @@ describe('ItemView', function() {
   it("defaults to div element if nothing is passed", function() {
     expect((new ItemView).element).toEqual('div');
   });
+
+  it(".render() method contains model text", function() {
+    expect(itemView.render()).toMatch(new RegExp(item.text));
+  });
+
 });
+

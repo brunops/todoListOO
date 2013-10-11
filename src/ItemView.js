@@ -4,3 +4,6 @@ function ItemView(opts) {
   this.element = opts.element || 'div';
 }
 
+ItemView.prototype.render = function() {
+  return '<' + this.element + '>' + this.model.text + '</' + this.element + '>';
+}
