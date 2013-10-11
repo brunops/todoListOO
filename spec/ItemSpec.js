@@ -17,5 +17,12 @@ describe("Item", function() {
     item.finish();
     expect(item.finished).toBe(true);
   });
-
+  
+  it(".start() marks item as in progress", function() {
+    item.finish();
+    item.start();
+    expect(item.finished).toBe(false);
+  });
 });
+
+

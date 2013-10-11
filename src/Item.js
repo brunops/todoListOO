@@ -6,3 +6,7 @@ function Item(opts) {
 Item.prototype.finish = function() {
   this.finished = true;
 };
+
+Item.prototype.start = function() {
+  this.finished = false;
+};
