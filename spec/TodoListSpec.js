@@ -13,4 +13,18 @@ describe('TodoList', function() {
     todoList.add(new Item());
     expect(todoList.list.length).toBe(1);
   });
+
+  it(".add(item) works with multiple items", function() {
+    todoList.add(new Item());
+    todoList.add(new Item());
+    todoList.add(new Item());
+    expect(todoList.list.length).toBe(3);
+  });
+
+  it(".first() returns first list element", function() {
+    todoList.add(new Item({ text: 'First added item' }));
+    todoList.add(new Item());
+    expect(todoList.first().text).toMatch(/First/);
+  });
 });
+
