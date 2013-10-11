@@ -1,4 +1,5 @@
 function ItemView(opts) {
-  this.model = opts.model;
+  opts = opts || {};
+  this.model = opts.model || new Item();
 }
 
