@@ -17,4 +17,8 @@ describe('ItemView', function() {
   it("has an HTML element associated", function() {
     expect((new ItemView({ element: 'li' })).element).toEqual('li');
   });
+
+  it("defaults to div element if nothing is passed", function() {
+    expect((new ItemView).element).toEqual('div');
+  });
 });
