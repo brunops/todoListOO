@@ -13,4 +13,8 @@ describe('ItemView', function() {
   it("is associated with a new empty model if no model is given", function() {
     expect((new ItemView()).model).toEqual(jasmine.any(Item));
   });
+
+  it("has an HTML element associated", function() {
+    expect((new ItemView({ element: 'li' })).element).toEqual('li');
+  });
 });
