@@ -29,5 +29,13 @@ describe('ItemView', function() {
   it(".render() contains ItemView element tag", function() {
     expect(itemView.render()).toMatch(new RegExp('<' + itemView.element + '>'));
   });
+
+  it(".render() returns a checkbox indicating whether the task is completed", function() {
+    expect(itemView.render()).toMatch(/<input type="checkbox"/);
+    expect(itemView.render()).not.toMatch(/checked/);
+    item.finish();
+    expect(itemView.render()).toMatch(/checked/);
+  });
+
 });
 
