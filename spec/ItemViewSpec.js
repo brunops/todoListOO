@@ -26,5 +26,8 @@ describe('ItemView', function() {
     expect(itemView.render()).toMatch(new RegExp(item.text));
   });
 
+  it(".render() contains ItemView element tag", function() {
+    expect(itemView.render()).toMatch(new RegExp('<' + itemView.element + '>'));
+  });
 });
 
