@@ -20,4 +20,9 @@ describe('TodoListView', function() {
   it(".render() renders an empty HTML if TodoList is empty", function() {
     expect(todoListView.render()).toMatch(new RegExp(todoListView.element + "><\/" + todoListView.element));
   });
+
+  it(".add(itemView) adds an element to the list", function() {
+    todoListView.add(new ItemView);
+    expect(todoListView.list.length).toBe(1);
+  });
 });

@@ -4,6 +4,10 @@ function TodoListView(opts) {
   this.element = opts.element || 'div';
 }
 
+TodoListView.prototype.add = function(itemView) {
+  this.list.push(itemView);
+};
+
 TodoListView.prototype.render = function() {
   return "<"  + this.element + ">" +
          "</" + this.element + ">";
