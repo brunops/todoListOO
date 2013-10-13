@@ -16,4 +16,8 @@ describe('TodoListView', function() {
   it("has a div HTML element wrapper by default", function() {
     expect(todoListView.element).toBe('div'); 
   });
+
+  it(".render() renders an empty HTML if TodoList is empty", function() {
+    expect(todoListView.render()).toMatch(new RegExp(todoListView.element + "><\/" + todoListView.element));
+  });
 });
