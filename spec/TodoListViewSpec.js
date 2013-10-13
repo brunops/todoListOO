@@ -30,4 +30,11 @@ describe('TodoListView', function() {
     todoListView.add();
     expect(todoListView.list[0]).toEqual(jasmine.any(ItemView));
   });
+
+  it(".remove(index) removes item with the specified index", function() {
+    todoListView.add(new ItemView({ text: 'pizza' }));
+    todoListView.add();
+    todoListView.remove(1);
+    expect(todoListView.list[0].render()).toMatch(/pizza/);
+  });
 });

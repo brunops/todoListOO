@@ -9,6 +9,10 @@ TodoListView.prototype.add = function(itemView) {
   this.list.push(itemView);
 };
 
+TodoListView.prototype.remove = function(index) {
+  this.list.splice(index, 1);
+};
+
 TodoListView.prototype.render = function() {
   return "<"  + this.element + ">" +
          "</" + this.element + ">";

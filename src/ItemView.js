@@ -1,6 +1,7 @@
 function ItemView(opts) {
   opts = opts || {};
-  this.model = opts.model || new Item();
+  this.model = opts.model ||
+              (opts.text ? new Item({ text: opts.text }) : new Item());
   this.element = opts.element || 'div';
 }
 
