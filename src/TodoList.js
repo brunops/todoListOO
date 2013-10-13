@@ -13,3 +13,7 @@ TodoList.prototype.first = function() {
 TodoList.prototype.remove = function(index) {
   this.list.splice(index, 1);
 };
+
+TodoList.prototype.size = function() {
+  return this.list.length;
+};

@@ -5,8 +5,13 @@ describe('TodoList', function() {
     todoList = new TodoList();
   });
 
-  it("starts empty", function() {
-    expect(todoList.list.length).toBe(0);
+  it(".size() returns total of items", function() {
+    expect(todoList.size()).toBe(0);
+  });
+
+  it(".add() add new empty Item to the collection", function() {
+    todoList.add();
+    expect(todoList.size()).toBe(1);
   });
 
   it(".add(item) adds new items to the collection", function() {
