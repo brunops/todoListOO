@@ -14,6 +14,14 @@ TodoListView.prototype.remove = function(index) {
 };
 
 TodoListView.prototype.render = function() {
-  return "<"  + this.element + ">" +
-         "</" + this.element + ">";
+  var output = '';
+  output += "<"  + this.element + ">";
+  
+  for (var i = 0; i < this.list.length; ++i) {
+    output += this.list[i].render();
+  }
+
+  output += "</" + this.element + ">";
+  return output;
 };
+

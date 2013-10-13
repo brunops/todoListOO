@@ -37,4 +37,10 @@ describe('TodoListView', function() {
     todoListView.remove(1);
     expect(todoListView.list[0].render()).toMatch(/pizza/);
   });
+
+  it(".render() renders all its items in correct order", function() {
+    todoListView.add(new ItemView({ text: 'bacon' }));
+    todoListView.add(new ItemView({ text: 'eggs' }));
+    expect(todoListView.render()).toMatch(/bacon(.*)?eggs/);
+  });
 });
