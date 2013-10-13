@@ -10,3 +10,6 @@ TodoList.prototype.first = function() {
   return this.list[0];
 };
 
+TodoList.prototype.remove = function(index) {
+  this.list.splice(index, 1);
+};

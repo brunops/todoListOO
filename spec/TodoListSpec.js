@@ -26,5 +26,12 @@ describe('TodoList', function() {
     todoList.add(new Item());
     expect(todoList.first().text).toMatch(/First/);
   });
+
+  it(".remove(index) removes item with the specified index", function() {
+    todoList.add(new Item());
+    todoList.add(new Item({ text: 'sup, bro' }));
+    todoList.remove(0);
+    expect(todoList.first().text).toBe('sup, bro');
+  });
 });
 
