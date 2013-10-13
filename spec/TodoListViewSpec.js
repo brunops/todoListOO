@@ -21,8 +21,13 @@ describe('TodoListView', function() {
     expect(todoListView.render()).toMatch(new RegExp(todoListView.element + "><\/" + todoListView.element));
   });
 
-  it(".add(itemView) adds an element to the list", function() {
+  it(".add(itemView) adds itemView element to the list", function() {
     todoListView.add(new ItemView);
     expect(todoListView.list.length).toBe(1);
+  });
+
+  it(".add() adds a new empty ItemView to the list", function() {
+    todoListView.add();
+    expect(todoListView.list[0]).toEqual(jasmine.any(ItemView));
   });
 });

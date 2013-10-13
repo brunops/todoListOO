@@ -5,6 +5,7 @@ function TodoListView(opts) {
 }
 
 TodoListView.prototype.add = function(itemView) {
+  itemView = itemView || new ItemView();
   this.list.push(itemView);
 };
 
