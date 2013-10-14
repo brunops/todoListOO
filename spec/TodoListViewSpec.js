@@ -3,6 +3,12 @@ describe('TodoListView', function() {
 
   beforeEach(function() {
     todoListView = new TodoListView();
+
+    $('body').append('<script type="html/template" id="item"><li><input type="checkbox" <%= finished ? "checked" : "" %>><span><%- text %></span><button class="destroy"></button></li></script>');
+  });
+
+  afterEach(function() {
+    $('#item').remove();
   });
 
   it("starts empty", function() {
