@@ -3,18 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Todo List</title>
-    
+
     <!-- Libraries -->
     <script src="lib/underscore.js"></script>
     <script src="lib/jquery.js"></script>
 
-    <!-- Models / Collections -->
+    <!-- Models -->
     <script src="src/Item.js"></script>
-    <script src="src/TodoList.js"></script>
-    
+
     <!-- Views -->
     <script src="src/ItemView.js"></script>
-    <script src="src/TodoListView.js"></script>
+
+    <!-- App -->
+    <script src="src/App.js"></script>
+
+    <script>
+      $(function() {
+        new App();
+      });
+    </script>
   </head>
 
   <body>
@@ -24,6 +31,7 @@
         <em>With pure vanilla JavaScript</em>
       </header>
       <section>
+        <input id="new-item" type="text" placeholder="What to do next?" autofocus>
         <ul id="todo-list"></ul>
       </section>
     </section>
