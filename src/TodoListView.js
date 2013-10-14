@@ -18,7 +18,7 @@ TodoListView.prototype.render = function() {
   output += "<"  + this.element + ">";
   
   for (var i = 0; i < this.list.length; ++i) {
-    output += this.list[i].render();
+    output += this.list[i].renderRaw();
   }
 
   output += "</" + this.element + ">";

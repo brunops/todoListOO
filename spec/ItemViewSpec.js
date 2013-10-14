@@ -1,16 +1,21 @@
 describe('ItemView', function() {
-  var item, itemView;
+  var item, itemView, todoList;
 
 
   beforeEach(function() {
     item = new Item({ text: 'Walk the dog' });
     itemView = new ItemView({ model: item });
+    todoList = $('<ul id="todo-list"></ul>');
 
+    // define ItemView template
     $('body').append('<script type="html/template" id="item"><li><input type="checkbox" <%= finished ? "checked" : "" %>><span><%- text %></span><button class="destroy"></button></li></script>');
+    // create TodoList
+    $('body').append(todoList);
   });
 
   afterEach(function() {
     $('#item').remove();
+    $('#todo-list').remove();
   });
 
   it("is associated with one model", function() {
@@ -21,15 +26,21 @@ describe('ItemView', function() {
     expect((new ItemView()).model).toEqual(jasmine.any(Item));
   });
 
-  it(".render() method contains model text", function() {
-    expect(itemView.render()).toMatch(new RegExp(item.text));
+  it(".renderRaw() method contains model text", function() {
+    expect(itemView.renderRaw()).toMatch(new RegExp(item.text));
   });
 
-  it(".render() returns a checkbox indicating whether the task is completed", function() {
-    expect(itemView.render()).toMatch(/<input type="checkbox"/);
-    expect(itemView.render()).not.toMatch(/checked/);
+  it(".renderRaw() returns a checkbox indicating whether the task is completed", function() {
+    expect(itemView.renderRaw()).toMatch(/<input type="checkbox"/);
+    expect(itemView.renderRaw()).not.toMatch(/checked/);
     item.finish();
-    expect(itemView.render()).toMatch(/checked/);
+    expect(itemView.renderRaw()).toMatch(/checked/);
+  });
+
+  it("checking/unchecking todo item status updates its model finished status", function() {
+    todoList.append(itemView.render());
+    todoList.find('input').attr('checked', 'checked').trigger('change');
+    expect(itemView.model.finished).toBeTruthy();
   });
 });
 

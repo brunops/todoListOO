@@ -41,7 +41,7 @@ describe('TodoListView', function() {
     todoListView.add(new ItemView({ text: 'pizza' }));
     todoListView.add();
     todoListView.remove(1);
-    expect(todoListView.list[0].render()).toMatch(/pizza/);
+    expect(todoListView.list[0].renderRaw()).toMatch(/pizza/);
   });
 
   it(".render() renders all its items in correct order", function() {
