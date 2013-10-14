@@ -11,6 +11,11 @@ ItemView.prototype.bindEvents = function($element) {
   $element.find('input').on('change', function(e) {
     self.model.finished = !self.model.finished;
   });
+
+  // Destroy element
+  $element.find('.destroy').on('click', function() {
+    $element.remove();
+  });
 };
 
 ItemView.prototype.renderRaw = function() {

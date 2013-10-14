@@ -30,7 +30,7 @@
 
     <script type="html/template" id="item">
       <li>
-        <input type="checkbox" <%= finished ? 'checked' : '' %>>
+        <input class="item-status" type="checkbox" <%= finished ? 'checked' : '' %>>
         <span><%- text %></span>
         <button class="destroy"></button>
       </li>
