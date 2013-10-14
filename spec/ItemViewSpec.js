@@ -42,5 +42,14 @@ describe('ItemView', function() {
     todoList.find('input').attr('checked', 'checked').trigger('change');
     expect(itemView.model.finished).toBeTruthy();
   });
+  
+  it("checking/unchecking todo item status updates only its model even when multiple items exist", function() {
+    var itemView2 = new ItemView();
+    todoList.append(itemView.render());
+    todoList.append(itemView2.render());
+    todoList.find('input').eq(1).attr('checked', 'checked').trigger('change');
+    expect(itemView.model.finished).toBeFalsy();
+    expect(itemView2.model.finished).toBeTruthy();
+  });
 });
 
