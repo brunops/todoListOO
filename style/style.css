@@ -1,0 +1,51 @@
+body {
+  height: 100%;
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(1,1,1,.8));
+  color: #ddd;
+  min-height: 600px;
+}
+
+h1 {
+  font-family: 'New Rocker', cursive;
+  font-size: 50px;
+  margin: 20px;
+}
+
+#main {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+#main small {
+  margin: 20px 0;
+}
+
+#new-item {
+  border: none;
+  padding: 5px;
+  width: 65%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  text-align: justify;
+  list-style: none;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 3px;
+  font-family: 'The Girl Next Door', cursive;
+}
+
+li button {
+  float: right;
+  padding: 0;
+  height: 27px;
+  margin: 2px 5px 0 0;
+}
